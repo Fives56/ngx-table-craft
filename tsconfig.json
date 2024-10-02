@@ -11,6 +11,11 @@
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "isolatedModules": true,
+    "paths": {
+      "ngx-table-craft": [
+        "./dist/ngx-table-craft"
+      ]
+    },
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,

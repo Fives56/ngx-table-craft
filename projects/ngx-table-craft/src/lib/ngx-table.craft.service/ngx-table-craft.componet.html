@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="card mt-5" >
+    <div class="card-header">
+      <h5 class="card-title">{{configs.title}}</h5>
+    </div>
+    <div class="card-body table-responsive">
+      <table class="table table-hover table-bordered">
+        <thead class="table-dark">
+          <tr>
+            @for (col of configs.colsName; track $index) {
+            <th
+              scope="col"
+              class="no-select"
+              (click)="sortData(configs.properties[$index])"
+            >
+              {{col}} @if (sortedColumn === configs.properties[$index]) {
+              <i
+                class="fas"
+                [ngClass]="{'fa-sort-up': sortOrder === 'asc', 'fa-sort-down': sortOrder === 'desc'}"
+              ></i>
+              }
+            </th>
+            }
+          </tr>
+        </thead>
+        <tbody>
+          @for (obj of objs | paginate: { itemsPerPage: itemsPerPage,
+          currentPage: page }; track $index ) {
+          <tr>
+            @for (item of getData(obj); track $index) {
+            <td>{{item}}</td>
+            }
+          </tr>
+          }
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-end align-items-start mt-3">
+        <div>
+            <ngx-pagination [page]="page" [totalPages]="totalPages" [pages]="pages" (pageChange)="page = $event"></ngx-pagination>
+        </div>
+       
+        <select
+        class="form-select ms-1"
+        style="width: auto; display: inline-block"
+        (change)="onItemsPerPageChange($event)"
+      >
+        <option *ngFor="let option of itemsPerPageOptions" [value]="option">
+          {{option}}
+        </option>
+      </select>
+      </div>
+    </div>
+  </div>
+</div>
