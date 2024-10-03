@@ -3,7 +3,7 @@
   "version": "0.0.0-development",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve ngx-table-craft",
     "build": "ng build ngx-table-craft",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
