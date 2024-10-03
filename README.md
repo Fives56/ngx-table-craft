@@ -1,27 +1,33 @@
-# NgxTableCraft
+# ngx-table-craft
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.6.
+## Description
+**ngx-table-craft** is a project for Angular 18 that automatically generates tables when provided with an array of objects and a configuration.
 
-## Development server
+## Project Structure
+- `projects/ngx-table-craft`: The Angular library.
+- `projects/demo-app`: The demo application.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Installation and Setup
+To clone the repository and set up the environment, follow these steps:
 
-## Code scaffolding
+- git clone https://github.com/Fives56/ngx-table-craft
+- cd ngx-table-craft
+- npm install
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## General Usage
+To start the demo application:
 
-## Build
+ng serve demo-app
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+This will start the demo application at http://localhost:4200/.
 
-## Running unit tests
+## Contributions
+If you would like to contribute to the project, please follow these guidelines:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Fork the repository.
+Create a new branch (git checkout -b feature/new-feature).
+Make your changes and commit them (git commit -m 'Add new feature').
+Open a pull request to the main branch.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## License
+This project is licensed under the MIT License.

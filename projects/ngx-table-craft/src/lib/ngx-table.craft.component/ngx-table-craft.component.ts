@@ -48,11 +48,11 @@ export class NgxTableCraft<T> implements OnInit, AfterViewInit {
   /**
    * Number of items to display per page.
    */
-  itemsPerPage: number = 5;
+  itemsPerPage: number = 10;
   /**
    * Options for the number of items per page.
    */
-  itemsPerPageOptions: number[] = [5, 10, 25, 50];
+  itemsPerPageOptions: number[] = [10, 25, 50];
   /**
    * Total number of pages.
    */

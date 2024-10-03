@@ -10,9 +10,11 @@
           &laquo;
         </a>
       </li>
-      <li class="page-item" *ngFor="let p of pages" [class.active]="p === page">
-        <a class="page-link" href="#" (click)="goToPage(p)">{{ p }}</a>
-      </li>
+      @for (p of pages; track $index) {
+        <li class="page-item" [class.active]="p === page">
+          <a class="page-link" href="#" (click)="goToPage(p)">{{ p }}</a>
+        </li>
+      }
       <li class="page-item" [class.disabled]="page === totalPages">
         <a class="page-link" href="#" (click)="goToPage(page + 1)" aria-label="Next">
           &raquo;
