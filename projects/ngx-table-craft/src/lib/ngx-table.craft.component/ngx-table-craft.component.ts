@@ -31,7 +31,7 @@ export class NgxTableCraft<T> implements OnInit, AfterViewInit {
   /**
    * Array of objects to be displayed in the table.
    */
-  @Input() objs!: T[];
+  @Input() data!: T[];
 
   /**
    * The column currently sorted.
@@ -63,8 +63,8 @@ export class NgxTableCraft<T> implements OnInit, AfterViewInit {
   pages: number[] = [];
 
   ngOnInit(): void {
-    if (!this.objs) {
-      this.objs = this.service.all();
+    if (!this.data) {
+      this.data = this.service.all();
     }
   }
 
@@ -101,7 +101,7 @@ export class NgxTableCraft<T> implements OnInit, AfterViewInit {
       this.sortOrder = 'asc';
     }
 
-    this.objs.sort((a: any, b: any) => {
+    this.data.sort((a: any, b: any) => {
       const aValue = a[column];
       const bValue = b[column];
 
@@ -126,7 +126,7 @@ export class NgxTableCraft<T> implements OnInit, AfterViewInit {
   }
 
   calculatePages(): void {
-    this.totalPages = Math.ceil(this.objs.length / this.itemsPerPage);
+    this.totalPages = Math.ceil(this.data.length / this.itemsPerPage);
     this.pages = Array.from({ length: this.totalPages }, (_, i) => i + 1);
   }
 }

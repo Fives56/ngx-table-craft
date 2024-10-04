@@ -11,25 +11,43 @@ import {IConfigs, NgxTableCraft} from '../../../ngx-table-craft/src/public-api';
 })
 export class AppComponent {
   title = 'demo-app';
-  objs = [
-    {
-      lastName: 'A',
-      email: 'email@example.com',
-      name: 'Pedro',
-      age: 36,
-    },
-    {
-      name: 'V',
-      lastName: 'Manuel',
-      email: 'email@example.col',
-      age: 34,
-    },
-    {
-      name: 'Pedro',
-      lastName: 'Manuel',
-      email: 'email@example.cos',
-      age: 40,
-    },
+  data = [
+    { name: 'John', age: 25, city: 'New York', sex: 'M' },
+    { name: 'Anna', age: 28, city: 'London', sex: 'F'  },
+    { name: 'Mike', age: 32, city: 'Chicago', sex: 'M'  },
+    { name: 'John', age: 25, city: 'New York', sex: 'M' },
+    { name: 'Anna', age: 28, city: 'London', sex: 'F'  },
+    { name: 'Mike', age: 32, city: 'Chicago', sex: 'M'  },
+    { name: 'John', age: 25, city: 'New York', sex: 'M' },
+    { name: 'Anna', age: 28, city: 'London', sex: 'F'  },
+    { name: 'Mike', age: 32, city: 'Chicago', sex: 'M'  },
+    { name: 'John', age: 25, city: 'New York', sex: 'M' },
+    { name: 'Anna', age: 28, city: 'London', sex: 'F'  },
+    { name: 'Mike', age: 32, city: 'Chicago', sex: 'M'  },
+    { name: 'John', age: 25, city: 'New York', sex: 'M' },
+    { name: 'Anna', age: 28, city: 'London', sex: 'F'  },
+    { name: 'Mike', age: 32, city: 'Chicago', sex: 'M'  },
+    { name: 'John', age: 25, city: 'New York', sex: 'M' },
+    { name: 'Anna', age: 28, city: 'London', sex: 'F'  },
+    { name: 'Mike', age: 32, city: 'Chicago', sex: 'M'  },
+    { name: 'John', age: 25, city: 'New York', sex: 'M' },
+    { name: 'Anna', age: 28, city: 'London', sex: 'F'  },
+    { name: 'Mike', age: 32, city: 'Chicago', sex: 'M'  },
+    { name: 'John', age: 25, city: 'New York', sex: 'M' },
+    { name: 'Anna', age: 28, city: 'London', sex: 'F'  },
+    { name: 'Mike', age: 32, city: 'Chicago', sex: 'M'  },
+    { name: 'John', age: 25, city: 'New York', sex: 'M' },
+    { name: 'Anna', age: 28, city: 'London', sex: 'F'  },
+    { name: 'Mike', age: 32, city: 'Chicago', sex: 'M'  },
+    { name: 'John', age: 25, city: 'New York', sex: 'M' },
+    { name: 'Anna', age: 28, city: 'London', sex: 'F'  },
+    { name: 'Mike', age: 32, city: 'Chicago', sex: 'M'  },
+    { name: 'John', age: 25, city: 'New York', sex: 'M' },
+    { name: 'Anna', age: 28, city: 'London', sex: 'F'  },
+    { name: 'Mike', age: 32, city: 'Chicago', sex: 'M'  },
+    { name: 'John', age: 25, city: 'New York', sex: 'M' },
+    { name: 'Anna', age: 28, city: 'London', sex: 'F'  },
+    { name: 'Mike', age: 32, city: 'Chicago', sex: 'M'  },
   ];
 
   configs: IConfigs = {

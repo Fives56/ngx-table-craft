@@ -15,11 +15,14 @@ export class PaginationComponent {
   @Input() pages: number[] = [];
   @Output() pageChange = new EventEmitter<number>();
 
+  currentPage = 1;
+
   goToPage(page: number): void {
     if (page >= 1 && page <= this.totalPages) {
       this.pageChange.emit(page);
+      currentPage = page;
     }
   }
-
+  abs = Math.abs
   
 }

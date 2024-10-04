@@ -1,12 +1,12 @@
 # NgxTableCraft
 
-`ngx-table-craft` is a component for _Angular 18_ that generates _dynamic tables_ using `Bootstrap`. It does this through a configuration object `configs` and an array of objects `objs`
+`ngx-table-craft` is a component for _Angular 18_ that generates _dynamic tables_ using `Bootstrap`. It does this through a configuration object `configs` and an array of objects `data`
 
 ## Installation
 
 To install the library, use npm:
 
-npm install ngx-table-craft --save
+npm install ngx-table-craft
 
 ## Basic Usage
 
@@ -41,11 +41,11 @@ import { IConfigs } from 'ngx-table-craft';
 @Component({
   selector: 'app-root',
   template: `
-    <ngx-table-craft [objs]="objs" [configs]="configs"></ngx-table-craft>
+    <ngx-table-craft [data]="data" [configs]="configs"></ngx-table-craft>
   `
 })
 export class AppComponent {
-  objs = [
+  data = [
     { name: 'John', age: 25, city: 'New York', sex: 'M' },
     { name: 'Anna', age: 28, city: 'London', sex: 'F'  },
     { name: 'Mike', age: 32, city: 'Chicago', sex: 'M'  }
@@ -62,7 +62,7 @@ export class AppComponent {
 ### Inputs
 - configs: IConfigs - Configuration object for the table.
 - service: IService<T> - Service for fetching data. This needs to be implemented.
-- objs: T[] - Array of objects to be displayed in the table.
+- data: T[] - Array of objects to be displayed in the table.
 
 ## Configuration
 

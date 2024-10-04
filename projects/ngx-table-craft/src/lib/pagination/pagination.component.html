@@ -11,9 +11,11 @@
         </a>
       </li>
       @for (p of pages; track $index) {
-        <li class="page-item" [class.active]="p === page">
-          <a class="page-link" href="#" (click)="goToPage(p)">{{ p }}</a>
-        </li>
+        @if ((abs(currentPage - p) <=2) || (currentPage == 1 && abs(currentPage - p) <= 4)) {
+          <li class="page-item" [class.active]="p === page">
+            <a class="page-link" href="#" (click)="goToPage(p)">{{ p }}</a>
+          </li>
+        }
       }
       <li class="page-item" [class.disabled]="page === totalPages">
         <a class="page-link" href="#" (click)="goToPage(page + 1)" aria-label="Next">
@@ -27,3 +29,4 @@
       </li>
     </ul>
   </nav>
+  

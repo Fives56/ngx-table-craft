@@ -24,7 +24,7 @@
           </tr>
         </thead>
         <tbody>
-          @for (obj of objs | paginate: { itemsPerPage: itemsPerPage,
+          @for (obj of data | paginate: { itemsPerPage: itemsPerPage,
           currentPage: page }; track $index ) {
           <tr>
             @for (item of getData(obj); track $index) {
