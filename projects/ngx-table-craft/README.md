@@ -1,12 +1,14 @@
 # NgxTableCraft
 
-`ngx-table-craft` is a component for _Angular 18_ that generates _dynamic tables_ using `Bootstrap`. It does this through a configuration object `configs` and an array of objects `data`
+`ngx-table-craft` is a component for _Angular 18_ that generates _dynamic tables_ using `Bootstrap` and `Angular Material`. It does this through a configuration object `configs` and an array of objects `data`
 
 ## Installation
 
 To install the library, use npm:
 
+```Bash
 npm install ngx-table-craft
+```
 
 ## Basic Usage
 
@@ -51,10 +53,20 @@ export class AppComponent {
     { name: 'Mike', age: 32, city: 'Chicago', sex: 'M'  }
   ];
 
+  sumAges() {
+    let sum = 0;
+    for (const element of this.data) {
+      sum += element.age;
+    }
+    return sum / this.data.length;
+  }
+
   configs: IConfigs = {
     title: 'User Table',
     colsName: ['Name', 'Age', 'City'],
-    properties: ['name', 'age', 'city']
+    properties: ['name', 'age', 'city'],
+    footers: ['Prom ages', '', this.sumAges()];
+    action: (data: any) => alert(`You clicked ${data.name}`);
   };
 }
 ```
@@ -71,27 +83,24 @@ The configuration should follow this structure:
 ```TypeScript
 export interface IConfigs {
   title: string;
-  colsName: string[];
+  headers: string[];
   properties: string[];
+  footers: any[];
+  action?: (data: any) => any;
 }
 ```
-
-- colsName: The names of the columns.
-- properties: The properties of the objects you will use. These are displayed in the same order as the array.
+- `title`: Table`s title.
+- `headers`: The names of the columns in order to show.
+- `properties`: The properties of the objects you will use. These are displayed in the same order as the array.
+- `footers`: Table`s footer. You can cerate a dinamic footer with name as string and actions with functions.
+- `action`: Action when a row is clicked. 
 
 ## Adding Styles
 
-To use the project, you need to add the imports for Bootstrap and FontAwesome in your main CSS/SCSS file or in the angular.json file under the styles section:
+To use the project, you need to add the imports for *Bootstrap* and *Angular Material* in your main CSS/SCSS file or in the angular.json file under the styles section:
 
-```JSON
-"styles": [
-    "projects/demo-app/src/styles.scss",
-    "node_modules/bootstrap/dist/css/bootstrap.min.css",
-    "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
-],
-"scripts": [
-    "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-]
+```TypeScript
+  @import '@angular/material/prebuilt-themes/magenta-violet.css';
 ```
 
 ## Available Commands
@@ -103,7 +112,7 @@ End-to-End Tests: ng e2e to execute the end-to-end tests.
 
 ## Contributions
 
-Contributions are welcome! Please open an issue or a pull request to discuss any changes you would like to make.
+All contributions are welcome! Please open an issue or a pull request to discuss any changes you would like to make.
 
 ## License
 

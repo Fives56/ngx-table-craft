@@ -1,0 +1,11 @@
+<mat-card class="scrollable-card" appearance="outlined">
+  <mat-card-header>
+    <div class="d-flex justify-content-between align-items-center w-100">
+      <mat-card-subtitle><h2>{{ configs.title }}</h2></mat-card-subtitle>
+      <ng-content select="[header-buttons]"></ng-content>
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <ngx-table [dataSource]="dataSource" [configs]="configs"></ngx-table>
+  </mat-card-content>
+</mat-card>

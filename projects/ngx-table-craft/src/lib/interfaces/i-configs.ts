@@ -1,5 +1,7 @@
 export interface IConfigs {
   title: string;
-  colsName: string[];
+  headers: string[];
   properties: string[];
+  footers: any[];
+  action?: (data: any) => any;
 }
