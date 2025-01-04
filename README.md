@@ -1,11 +1,6 @@
 ![npm](https://img.shields.io/npm/v/ngx-table-craft)
 ![npm](https://img.shields.io/npm/dt/ngx-table-craft) 
 ![npm](https://img.shields.io/npm/dm/ngx-table-craft)
-![npm](https://img.shields.io/npm/l/ngx-table-craft)
-![GitHub](https://img.shields.io/github/license/Fives56/ngx-table-craft)
-
-
-
 
 # ngx-table-craft 
 
