@@ -1,4 +1,8 @@
 # NgxTableCraft
+![npm version](https://img.shields.io/npm/v/ngx-table-craft)
+![npm downloads](https://img.shields.io/npm/dm/ngx-table-craft)
+![GitHub issues](https://img.shields.io/github/issues/Fives56/ngx-table-craft)
+![GitHub license](https://img.shields.io/github/license/Fives56/ngx-table-craft)
 
 `ngx-table-craft` is a component for _Angular 18_ that generates _dynamic tables_ using `Bootstrap` and `Angular Material`. It does this through a configuration object `configs` and an array of objects `data`
 
