@@ -1,4 +1,13 @@
-# ngx-table-craft
+![npm](https://img.shields.io/npm/v/ngx-table-craft)
+![npm](https://img.shields.io/npm/dt/ngx-table-craft) 
+![npm](https://img.shields.io/npm/dm/ngx-table-craft)
+![npm](https://img.shields.io/npm/l/ngx-table-craft)
+![GitHub](https://img.shields.io/github/license/Fives56/ngx-table-craft)
+
+
+
+
+# ngx-table-craft 
 
 ## Description
 **ngx-table-craft** is a project for Angular 18 that automatically generates tables when provided with an array of objects and a configuration.
