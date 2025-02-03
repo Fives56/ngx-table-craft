@@ -3,10 +3,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-modal',
-  standalone: true,
-  imports: [MatDialogModule, MatButtonModule],
-  templateUrl: './modal.component.html',
+    selector: 'app-modal',
+    standalone: true,
+    imports: [MatDialogModule, MatButtonModule],
+    templateUrl: './modal.component.html'
 })
 export class ModalComponent {
   

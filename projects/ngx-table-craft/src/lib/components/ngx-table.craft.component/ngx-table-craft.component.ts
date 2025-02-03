@@ -7,11 +7,11 @@ import { MatCardModule } from '@angular/material/card';
 
 
 @Component({
-  selector: 'ngx-table-craft',
-  standalone: true,
-  imports: [TableComponent, MatCardModule],
-  templateUrl: './ngx-table-craft.componet.html',
-  styleUrls: ['./ngx-table-craft.component.scss']
+    selector: 'ngx-table-craft',
+    standalone: true,
+    imports: [TableComponent, MatCardModule],
+    templateUrl: './ngx-table-craft.componet.html',
+    styleUrls: ['./ngx-table-craft.component.scss']
 })
 
 export class NgxTableCraft<T> implements OnInit, AfterViewInit {

@@ -9,10 +9,10 @@ import { ModalComponent } from './modal/modal.component';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [NgxTableCraft, MatIconModule, MatIconModule, MatDialogModule, ModalComponent, MatButtonModule],
-  templateUrl: './app.component.html',
+    selector: 'app-root',
+    standalone: true,
+    imports: [NgxTableCraft, MatIconModule, MatIconModule, MatDialogModule, ModalComponent, MatButtonModule],
+    templateUrl: './app.component.html'
 })
 export class AppComponent {
   constructor(public dialog: MatDialog) {
