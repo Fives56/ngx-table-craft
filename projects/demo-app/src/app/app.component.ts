@@ -76,6 +76,7 @@ export class AppComponent {
 
   configs: IConfigs = {
     title: 'Title Example',
+    class: 'container',
     headers: ['Nombre', 'Ciudad', 'Edad'],
     properties: ['name', 'city', 'age'],
     footers: ['Promedio de edades', ' ', this.sumAges()],
