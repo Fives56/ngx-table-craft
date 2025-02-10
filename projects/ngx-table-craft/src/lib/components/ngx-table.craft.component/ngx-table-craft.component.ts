@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, ChangeDetectorRef, OnChanges, SimpleChanges } from '@angular/core';
 import { IService } from '../../interfaces/i-service';
 import { IConfigs } from '../../interfaces/i-configs';
 import { TableComponent } from '../table/table.component';
@@ -14,7 +14,7 @@ import { MatCardModule } from '@angular/material/card';
     styleUrls: ['./ngx-table-craft.component.scss']
 })
 
-export class NgxTableCraft<T> implements OnInit, AfterViewInit {
+export class NgxTableCraft<T> implements OnInit, AfterViewInit, OnChanges{
   
   /**
    * Configuration settings for the table.
@@ -57,4 +57,15 @@ export class NgxTableCraft<T> implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.cdr.detectChanges()
   }
+  
+  /* Update data when data changes */
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['data']) {
+      this.dataSource.data = this.data;
+    }
+  }
+
+
 }
+
+
