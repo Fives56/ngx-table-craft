@@ -55,6 +55,11 @@ export class TableComponent<T> implements AfterViewInit{
       this.configs.action(row); 
     }
   }
+
+  /** Get nested property */
+  getNestedProperty(obj: any, path: string): any {
+    return path.split('.').reduce((acc, part) => acc && acc[part], obj);
+  }
 }
 
 
