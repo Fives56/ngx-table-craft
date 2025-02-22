@@ -4,15 +4,24 @@ import {
   NgxTableCraft,
 } from '../../../ngx-table-craft/src/public-api';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog'
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ModalComponent } from './modal/modal.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
-    selector: 'app-root',
-    standalone: true,
-    imports: [NgxTableCraft, MatIconModule, MatIconModule, MatDialogModule, ModalComponent, MatButtonModule],
-    templateUrl: './app.component.html'
+  selector: 'app-root',
+  standalone: true,
+  imports: [
+    NgxTableCraft,
+    MatIconModule,
+    MatIconModule,
+    MatDialogModule,
+    ModalComponent,
+    MatButtonModule,
+    MatCardModule,
+  ],
+  templateUrl: './app.component.html',
 })
 export class AppComponent {
   constructor(public dialog: MatDialog) {
@@ -72,7 +81,7 @@ export class AppComponent {
     dialogRef.afterClosed().subscribe((result) => {
       console.log('El modal se cerró con:', result);
     });
-  }
+  };
 
   configs: IConfigs = {
     title: 'Title Example',
@@ -80,6 +89,6 @@ export class AppComponent {
     headers: ['Nombre', 'Ciudad', 'Edad'],
     properties: ['name', 'city', 'age'],
     footers: ['Promedio de edades', ' ', this.sumAges()],
-    action: this.openModal
+    action: this.openModal,
   };
 }

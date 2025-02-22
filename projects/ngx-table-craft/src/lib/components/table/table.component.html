@@ -1,4 +1,4 @@
-<mat-form-field class="search-input">
+<mat-form-field class="search-input col-4">
   <mat-label>Buscar</mat-label>
   <input
     matInput
@@ -31,8 +31,8 @@
     <!-- Row shown when there is no matching data. -->
     <tr class="mat-row" *matNoDataRow>
       <td class="mat-cell text-center" colspan="4">
-        <div class="alert alert-warning" role="alert">
-          <i class="bi bi-exclamation-triangle"></i><strong>No hay datos para el filtro:</strong> {{ input.value }}
+        <div class="alert alert-warning w-50 m-auto mt-3" role="alert">
+          <i class="bi bi-exclamation-triangle"></i><strong class="ms-2">No hay datos para el filtro:</strong> {{ input.value }}
         </div>
       </td>
     </tr>
