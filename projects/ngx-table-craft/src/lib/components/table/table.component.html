@@ -1,12 +1,15 @@
-<mat-form-field class="search-input col-4">
-  <mat-label>Buscar</mat-label>
-  <input
-    matInput
-    (keyup)="applyFilter($event)"
-    [placeholder]="filterPlaceHolder"
-    #input
-  />
-</mat-form-field>
+<div class="d-flex">
+  <div class="col-lg-3 col-md-6 col-sm-12 p-2">
+    <label for="name" class="form-label">Nombre</label>
+    <input
+      class="form-control"
+      matInput
+      (keyup)="applyFilter($event)"
+      [placeholder]="filterPlaceHolder"
+      #input
+    />
+  </div>  
+</div>
 
 <div class="scrollable-content">
   <table mat-table [dataSource]="dataSource" matSort>
@@ -25,7 +28,7 @@
     }
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-    <tr mat-row *matRowDef="let element; columns: displayedColumns" (click)="onRowClick(element)"></tr>
+    <tr mat-row class="mat-row" *matRowDef="let element; columns: displayedColumns" (click)="onRowClick(element)"></tr>
     <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
 
     <!-- Row shown when there is no matching data. -->
