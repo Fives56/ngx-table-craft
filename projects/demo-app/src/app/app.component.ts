@@ -24,9 +24,7 @@ import { MatCardModule } from '@angular/material/card';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  constructor(public dialog: MatDialog) {
-    const promedio = this.sumAges();
-  }
+  constructor(public dialog: MatDialog) {}
 
   title = 'demo-app';
   data = [
@@ -68,9 +66,9 @@ export class AppComponent {
     { name: 'Mike', age: 32, city: 'Chicago', sex: 'M' },
   ];
 
-  sumAges() {
+  sumAges(data: any) {
     let sum = 0;
-    for (const element of this.data) {
+    for (const element of data) {
       sum += element.age;
     }
     return sum / this.data.length;
@@ -88,7 +86,7 @@ export class AppComponent {
     class: 'container',
     headers: ['Nombre', 'Ciudad', 'Edad'],
     properties: ['name', 'city', 'age'],
-    footers: ['Promedio de edades', ' ', this.sumAges()],
+    footers: ['Promedio de edades', '', (data: any[]) => this.sumAges(data).toFixed(2)],
     action: this.openModal,
   };
 }

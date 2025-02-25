@@ -63,6 +63,9 @@ export class NgxTableCraft<T> implements OnInit, AfterViewInit, OnChanges{
     if (changes['data']) {
       this.dataSource.data = this.data;
     }
+    if (changes['configs']) {
+      this.dataSource._updateChangeSubscription();
+    }
   }
 
 

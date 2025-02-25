@@ -22,7 +22,7 @@
         </div>
       </th>
       <td mat-cell *matCellDef="let element">{{ getNestedProperty(element, item) }}</td>
-      <td mat-footer-cell *matFooterCellDef>{{ configs.footers[$index] }}</td>
+      <td mat-footer-cell *matFooterCellDef>{{ typeof configs.footers[$index] === 'function' ? configs.footers[$index](dataSource.data) : configs.footers[$index] }}</td>
     </ng-container>
 
     }

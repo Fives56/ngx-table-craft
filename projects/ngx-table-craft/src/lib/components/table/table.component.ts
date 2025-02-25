@@ -1,4 +1,4 @@
-import { Component, Input, AfterViewInit, ViewChild} from '@angular/core';
+import { Component, Input, AfterViewInit, ViewChild, SimpleChanges} from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
@@ -60,6 +60,7 @@ export class TableComponent<T> implements AfterViewInit{
   getNestedProperty(obj: any, path: string): any {
     return path.split('.').reduce((acc, part) => acc && acc[part], obj);
   }
+
 }
 
 

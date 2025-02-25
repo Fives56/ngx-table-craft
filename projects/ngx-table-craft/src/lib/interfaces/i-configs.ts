@@ -4,5 +4,5 @@ export interface IConfigs {
   headers: string[];
   properties: string[];
   footers: any[];
-  action?: (data: any) => any;
+  action?: (data: any) => any ;
 }
