@@ -7,6 +7,7 @@
   </div>
   <div>
     <hr>
+    <ng-content select="[body-buttons]"></ng-content>
     <ngx-table [dataSource]="dataSource" [configs]="configs"></ngx-table>
   </div>
 </div>

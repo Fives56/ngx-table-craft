@@ -1,17 +1,17 @@
 <div class="d-flex">
   <div class="col-lg-3 col-md-6 col-sm-12 p-2">
-    <label for="name" class="form-label">Nombre</label>
+    <label for="name" class="form-label">Buscar</label>
     <input
       class="form-control"
       matInput
       (keyup)="applyFilter($event)"
-      [placeholder]="filterPlaceHolder"
+      placeholder="...."
       #input
     />
   </div>  
 </div>
 
-<div class="scrollable-content">
+<div >
   <table mat-table [dataSource]="dataSource" matSort>
     @for (item of displayedColumns; track $index) {
 
@@ -33,9 +33,9 @@
 
     <!-- Row shown when there is no matching data. -->
     <tr class="mat-row" *matNoDataRow>
-      <td class="mat-cell text-center" colspan="4">
+      <td class="mat-cell text-center" [attr.colspan]="displayedColumns.length">
         <div class="alert alert-warning w-50 m-auto mt-3" role="alert">
-          <i class="bi bi-exclamation-triangle"></i><strong class="ms-2">No hay datos para el filtro:</strong> {{ input.value }}
+          <i class="bi bi-exclamation-triangle-fill"></i><strong class="ms-2">No hay datos en la tabla</strong>
         </div>
       </td>
     </tr>

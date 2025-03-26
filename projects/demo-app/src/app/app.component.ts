@@ -17,7 +17,6 @@ import { MatCardModule } from '@angular/material/card';
     MatIconModule,
     MatIconModule,
     MatDialogModule,
-    ModalComponent,
     MatButtonModule,
     MatCardModule,
   ],
