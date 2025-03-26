@@ -26,6 +26,8 @@ export class TableComponent<T> implements AfterViewInit{
   displayedColumns!: string[];
   /*Columns name filter place holder*/
   filterPlaceHolder!: string;
+  colspan: number = 40;
+
   
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
@@ -36,6 +38,7 @@ export class TableComponent<T> implements AfterViewInit{
   /* Set properties and table headers */
   setConfigs(){ 
     this.displayedColumns = this.configs.properties;
+    this.colspan = this.displayedColumns.length;
     this.filterPlaceHolder = this.configs.headers.join(', ');
   }
 
