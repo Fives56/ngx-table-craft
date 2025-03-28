@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, AfterViewInit, ChangeDetectorRef, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, ChangeDetectorRef, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 import { IService } from '../../interfaces/i-service';
 import { IConfigs } from '../../interfaces/i-configs';
 import { TableComponent } from '../table/table.component';
@@ -16,6 +16,7 @@ import { MatCardModule } from '@angular/material/card';
 
 export class NgxTableCraft<T> implements OnInit, AfterViewInit, OnChanges{
   
+  @ViewChild(TableComponent) tableComponent!: TableComponent<any>;
   /**
    * Configuration settings for the table.
    */
@@ -57,6 +58,13 @@ export class NgxTableCraft<T> implements OnInit, AfterViewInit, OnChanges{
   ngAfterViewInit(): void {
     this.cdr.detectChanges()
   }
+
+  // En tu componente padre
+
+applyFilter(event: Event) {
+  const filterValue = (event.target as HTMLInputElement).value;
+  this.tableComponent.applyFilter(filterValue);
+}
   
   /* Update data when data changes */
   ngOnChanges(changes: SimpleChanges): void {
@@ -67,8 +75,6 @@ export class NgxTableCraft<T> implements OnInit, AfterViewInit, OnChanges{
       this.dataSource._updateChangeSubscription();
     }
   }
-
-
 }
 
 

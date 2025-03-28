@@ -1,13 +1,27 @@
 <div [class]="configs.class">
-  <div>
-    <div class="d-flex flex-wrap justify-content-between align-items-center pt-2">
-      <mat-card-subtitle><h3>{{ configs.title }}</h3></mat-card-subtitle>
-      <ng-content select="[header-buttons]"></ng-content>
+  @if (!!configs.title) {
+    <div>
+      <div class="d-flex flex-wrap justify-content-between align-items-center pt-2">
+        <mat-card-subtitle>
+          <h3>{{ configs.title }}</h3>
+        </mat-card-subtitle>
+        <ng-content select="[header-buttons]"></ng-content>
+      </div>
+      <hr>
     </div>
-  </div>
+  }
   <div>
-    <hr>
-    <ng-content select="[body-buttons]"></ng-content>
+    <div class="mb-3">
+      <!-- Search -->
+      <div class="row w-100">
+        <div class="col-lg-3 col-md-3 col-sm-12 p-2">
+          <label for="name" class="form-label">Buscar</label>
+          <input class="form-control" matInput (keyup)="applyFilter($event)" placeholder="...." #input />
+        </div>
+        <div class="col-md-9">
+          <ng-content select="[body-buttons]"></ng-content>
+        </div>
+      </div>
+    </div>
     <ngx-table [dataSource]="dataSource" [configs]="configs"></ngx-table>
-  </div>
 </div>

@@ -25,7 +25,6 @@ import { MatCardModule } from '@angular/material/card';
 export class AppComponent {
   constructor(public dialog: MatDialog) {}
 
-  title = 'demo-app';
   data = [
     { name: 'John', age: 25, city: 'New York', sex: 'M' },
     { name: 'Anna', age: 28, city: 'London', sex: 'F' },
@@ -81,7 +80,7 @@ export class AppComponent {
   };
 
   configs: IConfigs = {
-    title: 'Title Example',
+    title: 'Title',
     class: 'container',
     headers: ['Nombre', 'Ciudad', 'Edad'],
     properties: ['name', 'city', 'age'],
